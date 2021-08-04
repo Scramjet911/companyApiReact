@@ -1,0 +1,33 @@
+.sidebar {
+    overflow-y: hidden;
+    margin-top: 0px;
+    padding-top: 0px;
+    border-top: 0px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2px;
+    width: 40%;
+    min-width: 150px;
+}
+
+.sidebar-element {
+    display: flex;
+    align-items: center;
+    background-color: rgb(37, 173, 231);
+    color: #ffffff;
+    border-radius: 30px 0 0 30px;
+    padding: 1px 10px 1px 10px;
+    margin: 10px 0 0 10px;
+}
+
+.icon-container {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: white;
+    flood-color: rgb(37, 173, 231);
+}
+
+.icon {
+    transform: translate(4px, 4px);
+}

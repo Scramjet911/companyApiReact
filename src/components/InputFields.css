@@ -1,0 +1,47 @@
+label {
+    position: absolute;
+    transform: translateY(-24px);
+}
+
+.arrow {
+    border: solid rgba(0, 0, 0, 0.418);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    position: absolute;
+    pointer-events: none;
+}
+
+.down {
+    transform: translate(-46px, 12px) rotate(45deg);
+    -webkit-transform: translate(-46px, 12px) rotate(45deg);
+}
+
+select, input {
+    border: 1px solid rgba(0, 0, 0, 0.349);
+    margin-right: 20px;
+    border-width: 1px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: rgb(245, 245, 245);
+}
+
+select {
+    font-size: 0.9em;
+    width: 322px;
+    min-width: 100px;
+    appearance: none;
+}
+
+input {
+    width: 300px;
+}
+
+.red-box {
+    border: 3px solid rgb(236, 59, 59) !important;
+}
+
+input::-moz-focus-inner, input:focus {
+    border: 0.5px solid rgba(0, 0, 0, 0.459);
+    outline: none;
+}

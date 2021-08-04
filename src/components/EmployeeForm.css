@@ -1,0 +1,62 @@
+.form-container {
+    padding: 10px;
+}
+
+.form-title {
+    padding: 8px 0px 8px 25px;
+    margin: 0 0 20px 10px;
+}
+
+.employee-form {
+    padding: 20px 10px 10px 10px;
+    margin: 0 0 10px 10px;
+}
+
+.fields-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fields-container>div {
+    padding: 27px 20px 20px 20px;
+}
+
+/* Buttons */
+
+.form-buttons {
+    padding: 10px;
+    margin: 0 0 5px 10px;
+}
+
+.button {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+    padding: 12px;
+    min-width: 100px;
+    border: 0px;
+    width: 100px;
+    padding: 5px;
+    border-radius: 4px;
+}
+.button:hover:enabled {
+    transform: translate(2px, 1px);
+}
+
+.create-button {
+    background: #3498db;
+    color: #ffffff;
+    margin-right: 20px;
+}
+
+.create-button:active {
+    background: #267fbb;
+}
+.create-button:disabled {
+    background: rgb(214, 214, 214);
+}
+
+.cancel-button {
+    border: 1px solid rgba(0, 0, 0, 0.349);
+    background: #ededed;
+    color: #000;
+}
