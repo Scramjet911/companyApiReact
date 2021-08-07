@@ -1,52 +1,47 @@
-import React, { useRef, useState } from 'react';
 import './InputFields.css';
 
-const InputField = ({fieldName, fieldId, fieldType, validField, invalidField}) => {
-    const [fieldCounted, changeFieldCounted] = useState(false);
-    const inputRef = useRef(null);
+const InputField = ({fieldName, fieldId, fieldType, inputRef, checkFields}) => {
 
     const validateInput = (e) => {
         switch(fieldId){
             case 'nameInput':
-                if(e.target.value.match(/^[a-zA-Z ]{1,64}$/) === null && !fieldCounted){
+                if(e.target.value.match(/^[a-zA-Z ]{1,64}$/) === null){
                     inputRef.current.classList.add('red-box');
-                    invalidField();
-                    changeFieldCounted(true);
+                    checkFields(false);
                 }
                 else{
                     inputRef.current.classList.remove('red-box');
-                    validField();
-                    changeFieldCounted(true);
+                    checkFields();
                 }
                 break;
             case 'numberInput':
-                if(e.target.value.match(/^(\+91|0)[0-9]{0,16}$/) === null && !fieldCounted){
+                if(e.target.value.match(/^(\+91|0)[0-9]{0,16}$/) === null){
                     inputRef.current.classList.add('red-box');
-                    invalidField();
+                    checkFields(false);
                 }
                 else{
                     inputRef.current.classList.remove('red-box');
-                    validField();
+                    checkFields();
                 }
                 break;
             case 'emailInput':
-                if(e.target.value.match(/@keyvalue.systems$/) === null && !fieldCounted){
+                if(e.target.value.match(/.+@keyvalue.systems$/) === null){
                     inputRef.current.classList.add('red-box');
-                    invalidField();
+                    checkFields(false);
                 }
                 else{
                     inputRef.current.classList.remove('red-box');
-                    validField();
+                    checkFields();
                 }
                 break;
             case 'addressInput':
-                if(e.target.value.length > 120 && !fieldCounted){
+                if(e.target.value.length > 120){
                     inputRef.current.classList.add('red-box');
-                    invalidField();
+                    checkFields(false);
                 }
                 else{
                     inputRef.current.classList.remove('red-box');
-                    validField();
+                    checkFields();
                 }
                 break;
             default :

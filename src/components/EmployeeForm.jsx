@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import './EmployeeForm.css';
 
@@ -8,19 +8,31 @@ import FileInput from './FileInput';
 
 const EmployeeForm = (props) => {
     const [submitButton, changeSubmitButton] = useState(true);
-    const [fieldCount, changeFieldCount] = useState(0);
 
-    const validField = () => {
-        changeFieldCount(fieldCount + 1);
-        if(fieldCount >= 4){
+    const nameRef = useRef(null);
+    const numberRef = useRef(null);
+    const emailRef = useRef(null);
+    const dateRef = useRef(null);
+    const experienceRef = useRef(null);
+    const addressRef = useRef(null);
+    const roleRef = useRef(null);
+    const statusRef = useRef(null);
+
+    const onFieldsChange = (forceValue=true) => {
+        console.log(nameRef.current.value);
+        if (nameRef.current?.value &&
+            numberRef.current?.value &&
+            emailRef.current?.value &&
+            dateRef.current?.value &&
+            experienceRef.current?.value &&
+            addressRef.current?.value &&
+            forceValue
+        ){
             changeSubmitButton('');
         }
-    }
-
-    const invalidField = () => {
-        changeFieldCount(fieldCount - 1);
-        if(fieldCount < 4)
+        else{
             changeSubmitButton(true);
+        }
     }
 
     return (
@@ -34,51 +46,53 @@ const EmployeeForm = (props) => {
                         fieldName='Employee Name' 
                         fieldId='nameInput' 
                         fieldType='text' 
-                        validField={validField} 
-                        invalidField={invalidField}
+                        inputRef={nameRef}
+                        checkFields={onFieldsChange}
                     />
                     <InputField 
                         fieldName='Employee Number' 
                         fieldId='numberInput' 
-                        fieldType='text' 
-                        validField={validField} 
-                        invalidField={invalidField}
+                        fieldType='number' 
+                        inputRef={numberRef}
+                        checkFields={onFieldsChange}
                     />
                     <InputField 
                         fieldName='Employee Email' 
                         fieldId='emailInput' 
                         fieldType='email' 
-                        validField={validField} 
-                        invalidField={invalidField}
+                        inputRef={emailRef}
+                        checkFields={onFieldsChange}
                     />
                     <InputField 
                         fieldName='Joining Date' 
                         fieldId='joiningInput' 
                         fieldType='date' 
-                        validField={validField} 
-                        invalidField={invalidField}
+                        inputRef={dateRef}
+                        checkFields={onFieldsChange}
                     />
                     <SelectFields 
                         name='Role' 
                         options={['Trainee', 'Associate', 'Manager']} 
+                        selectRef={roleRef}
                     />
                     <SelectFields 
                         name='Status' 
                         options={['Married', 'Single', 'Divorced']} 
+                        selectRef={statusRef}
                     />
                     <InputField 
                         fieldName='Experience' 
                         fieldId='experienceInput' 
                         fieldType='text' 
-                        validField={validField} 
-                        invalidField={invalidField}
+                        inputRef={experienceRef}
+                        checkFields={onFieldsChange}
                     />
                     <InputField 
                         fieldName='Address' 
                         fieldId='addressInput' 
                         fieldType='text' 
-                        validField={validField} 
-                        invalidField={invalidField}
+                        inputRef={addressRef}
+                        checkFields={onFieldsChange}
                     />
                     <FileInput />
                 </div>

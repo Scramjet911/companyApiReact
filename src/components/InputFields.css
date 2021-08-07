@@ -41,7 +41,17 @@ input {
     border: 3px solid rgb(236, 59, 59) !important;
 }
 
-input::-moz-focus-inner, input:focus {
-    border: 0.5px solid rgba(0, 0, 0, 0.459);
+input::-moz-focus-inner, input:focus, input:focus-within, input:focus-visible{
     outline: none;
+    border: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input[type=number] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
 }

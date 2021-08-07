@@ -52,6 +52,7 @@
     background: #267fbb;
 }
 .create-button:disabled {
+    cursor: default;
     background: rgb(214, 214, 214);
 }
 
