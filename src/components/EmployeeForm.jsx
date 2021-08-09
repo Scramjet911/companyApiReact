@@ -25,6 +25,8 @@ const EmployeeForm = (props) => {
             numberRef.current?.value &&
             emailRef.current?.value &&
             dateRef.current?.value &&
+            roleRef.current?.value !== 'none' &&
+            statusRef.current?.value !== 'none' &&
             experienceRef.current?.value &&
             addressRef.current?.value &&
             forceValue
@@ -38,7 +40,6 @@ const EmployeeForm = (props) => {
 
     const saveEmployee = (e) => {
         e.preventDefault();
-        console.log(roleRef.current?.value);
         const newEmployee = {
             name : nameRef.current?.value,
             number : numberRef.current?.value,

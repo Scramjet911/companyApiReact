@@ -1,10 +1,10 @@
 import React from 'react';
 
-const SelectFields = ({name, options}) => {
+const SelectFields = ({name, options, selectRef}) => {
     return (
         <div className='select-wrapper'>
             <label htmlFor={name.toLowerCase()}>{name}</label>
-            <select name={name.toLowerCase()} id={name.toLowerCase()} defaultValue='none'>
+            <select ref={selectRef} name={name.toLowerCase()} id={name.toLowerCase()} defaultValue='none'>
                 <option value='none' disabled hidden>{name}</option>
                 {
                     options.map((el, index) => {
