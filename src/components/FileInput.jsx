@@ -6,7 +6,8 @@ const FileInput = (props) => {
 
     const fileInputRef = useRef(null);
     
-    const openFileInput = () => {
+    const openFileInput = (e) => {
+        e.preventDefault();
         fileInputRef.current.click();
     }
     const handleChange = (e) => {

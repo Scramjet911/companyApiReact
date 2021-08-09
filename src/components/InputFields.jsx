@@ -15,7 +15,7 @@ const InputField = ({fieldName, fieldId, fieldType, inputRef, checkFields}) => {
                 }
                 break;
             case 'numberInput':
-                if(e.target.value.match(/^(\+91|0)[0-9]{0,16}$/) === null){
+                if(inputRef.current.value.match(/^(\+91|0)[0-9]{0,16}$/) === null){
                     inputRef.current.classList.add('red-box');
                     checkFields(false);
                 }
