@@ -3,10 +3,10 @@ import './App.css';
 import SideBar from './components/SideBar';
 import EmployeeForm from './components/EmployeeForm';
 import EmployeeList from './components/EmployeeList';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 // import { setEmployeeList } from './actions';
 
-function App() {
+function App(props) {
   return (
     <div className='App'>
       <div className='header-logo'>
@@ -14,11 +14,20 @@ function App() {
       </div>
       <div className='main-container'>
         <SideBar />
-        <EmployeeForm />
-        {/* <EmployeeList /> */}
+        {props.showEmployeeList?
+          <EmployeeList />
+          :
+          <EmployeeForm />
+        }
       </div>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  showEmployeeList: state.showEmployeeList
+});
+
+// const mapDispatchToProps = () => {return {}}
+
+export default connect(mapStateToProps)(App);

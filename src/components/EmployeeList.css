@@ -1,0 +1,13 @@
+.list-container{
+    padding: 20px;
+}
+.employee-table{
+    width: 100%;
+}
+.employee-table td {
+    text-align: center;
+}
+.delete-icon{
+    width: 20px;
+    cursor: pointer;
+}

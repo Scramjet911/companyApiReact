@@ -21,7 +21,6 @@ const EmployeeForm = (props) => {
     const statusRef = useRef(null);
 
     const onFieldsChange = (forceValue = true) => {
-        console.log(nameRef.current.value);
         if (nameRef.current?.value &&
             numberRef.current?.value &&
             emailRef.current?.value &&
@@ -37,7 +36,9 @@ const EmployeeForm = (props) => {
         }
     }
 
-    const saveEmployee = () => {
+    const saveEmployee = (e) => {
+        e.preventDefault();
+        console.log(roleRef.current?.value);
         const newEmployee = {
             name : nameRef.current?.value,
             number : numberRef.current?.value,
@@ -125,9 +126,6 @@ const EmployeeForm = (props) => {
     )
 };
 
-
-const mapStateToProps = () => {}
-
 const mapDispatchToProps = (dispatch) => {
     return {
         addEmployee: (employee) => {
@@ -136,4 +134,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EmployeeForm);
+export default connect(null, mapDispatchToProps)(EmployeeForm);

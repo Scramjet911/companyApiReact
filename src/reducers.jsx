@@ -1,8 +1,9 @@
 const initialState = {
-    employeeList: [],
+    EmployeeList: [],
+    showEmployeeList: false,
 }
 
-const Employees = (state=initialState, action={}) => {
+const Employees = (state=initialState, action) => {
     switch (action.type) {
         case 'ADD_EMPLOYEE':{
             const empList = [...state.EmployeeList, action.payload];
