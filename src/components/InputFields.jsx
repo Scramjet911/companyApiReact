@@ -20,7 +20,7 @@ const InputField = ({fieldName, fieldId, fieldType, validField, invalidField}) =
                 }
                 break;
             case 'numberInput':
-                if(e.target.value.match(/^(\+91|0)[0-9]{0,16}$/) === null && !fieldCounted){
+                if(inputRef.current.value.match(/^(\+91|0)[0-9]{0,16}$/) === null){
                     inputRef.current.classList.add('red-box');
                     invalidField();
                 }
