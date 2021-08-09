@@ -5,16 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-// import reducers from './reducers';
+import Employees from './reducers';
 
-// const store = createStore(reducers);
+const store = createStore(Employees);
 
 ReactDOM.render(
-  // <Provider store={store}>
+  <Provider store={store}>
     <React.StrictMode>
       <App />
     </React.StrictMode>,
-  // </Provider>,
+   </Provider>,
   document.getElementById('root')
 );
 
